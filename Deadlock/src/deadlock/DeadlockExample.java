@@ -27,10 +27,10 @@ public class DeadlockExample
     
     public static void multiThreadedApp()
     {
-        AccountEx acct1 = new AccountEx(1);
-        AccountEx acct2 = new AccountEx(2);
-        AccountEx acct3 = new AccountEx(3);
-        AccountEx acct4 = new AccountEx(4);
+        Account acct1 = new Account();
+        Account acct2 = new Account();
+        Account acct3 = new Account();
+        Account acct4 = new Account();
         AdjustAccount adjustAccount1 = new AdjustAccount(acct1, 1);
         Thread adjustThread1 = new Thread(adjustAccount1);
         adjustThread1.start();
