@@ -21,10 +21,16 @@ public class DeadlockExample
      */
     public static void main(String[] args)
     {
-        Account acct1 = new Account();
-        Account acct2 = new Account();
-        Account acct3 = new Account();
-        Account acct4 = new Account();
+        multiThreadedApp();
+        //multiThredTransfer();
+    }
+    
+    public static void multiThreadedApp()
+    {
+        AccountEx acct1 = new AccountEx(1);
+        AccountEx acct2 = new AccountEx(2);
+        AccountEx acct3 = new AccountEx(3);
+        AccountEx acct4 = new AccountEx(4);
         AdjustAccount adjustAccount1 = new AdjustAccount(acct1, 1);
         Thread adjustThread1 = new Thread(adjustAccount1);
         adjustThread1.start();
@@ -37,5 +43,17 @@ public class DeadlockExample
         AdjustAccount adjustAccount4 = new AdjustAccount(acct4, 4);
         Thread adjustThread4 = new Thread(adjustAccount4);
         adjustThread4.start();
+    }
+    
+    public static void multiThredTransfer()
+    {
+        AccountEx acct1 = new AccountEx(1);
+        AccountEx acct2 = new AccountEx(2);
+        TransferAccount transferAccount1 = new TransferAccount(acct1, acct2, 1);
+        TransferAccount transferAccount2 = new TransferAccount(acct2, acct1, 2);
+        Thread transferThread1 = new Thread(transferAccount1);
+        Thread transferThread2 = new Thread(transferAccount2);
+        transferThread1.start();
+        transferThread2.start();
     }
 }
