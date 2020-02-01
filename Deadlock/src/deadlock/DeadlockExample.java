@@ -21,11 +21,10 @@ public class DeadlockExample
      */
     public static void main(String[] args)
     {
-        multiThreadedApp();
-        //multiThredTransfer();
-        //This is a git example
+        multiThreadedApp();  //Our first example
+        //multiThredTransfer();  //Our second example
     }
-    
+
     public static void multiThreadedApp()
     {
         Account acct1 = new Account();
@@ -45,7 +44,7 @@ public class DeadlockExample
         Thread adjustThread4 = new Thread(adjustAccount4);
         adjustThread4.start();
     }
-    
+
     public static void multiThredTransfer()
     {
         AccountEx acct1 = new AccountEx(1);
