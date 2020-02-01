@@ -1,7 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ Project: Lab 2 - Group
+ Purpose Details: Deadlock application
+ Course: IST 411
+ Author: Ryan Urbanski, Albana Beqo, James Bristow II, Logan Pratt, Fred Aaron
+ Date Developed: 2/1/2020
+ Last Date Changed:2/1/2020
+ Revision: 1
  */
 package deadlock;
 
@@ -9,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  *
- * @author James Bristow <jmb1079@psu.edu>
+ * @author Ryan Urbanski, Albana Beqo, James Bristow II, Logan Pratt, Fred Aaron
  */
 public class TransferAccount implements Runnable
 {
@@ -32,7 +36,7 @@ public class TransferAccount implements Runnable
         {
             System.out.println("Thread " + thread + " Account "
                         + fromAcct.getAcct() + " transfer $" + transferAmount
-                        + "to Account " + toAcct.getAcct());
+                        + " to Account " + toAcct.getAcct());
             while (fromAcct.getBalance() < transferAmount)
             {
                 System.out.println("Thread " + thread + ": Transfer waiting...");

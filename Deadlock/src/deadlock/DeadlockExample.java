@@ -5,7 +5,7 @@
  Author: Ryan Urbanski, Albana Beqo, James Bristow II, Logan Pratt, Fred Aaron
  Date Developed: 2/1/2020
  Last Date Changed:2/1/2020
- Revision: 1
+ Revision: 2
  */
 package deadlock;
 
@@ -21,8 +21,8 @@ public class DeadlockExample
      */
     public static void main(String[] args)
     {
-        multiThreadedApp();
-        //multiThredTransfer();
+        //multiThreadedApp();
+        multiThredTransfer();
     }
     
     public static void multiThreadedApp()
