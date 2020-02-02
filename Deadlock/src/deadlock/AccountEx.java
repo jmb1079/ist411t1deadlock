@@ -71,6 +71,8 @@ public class AccountEx
             System.out.println("Account " + acct + ": Old balance: $" + balance 
             + "; New Balance: $" + newBalance);
             balance = newBalance;
+            //sufficientFunds.notifyAll();
+            //notifyAll();
         }
         finally
         {

@@ -34,19 +34,16 @@ public class AdjustAccount implements Runnable
         double withdraw = 2000;
         try
         {
-            while (true)
+            while (acct.getBalance() > withdraw)
             {
-                while (acct.getBalance() < withdraw)
-                {
-                    System.out.println("Thread " + thread + " Balance is " + acct.getBalance());
-                    System.out.println("Thread " + thread + " Trying to withdraw " + withdraw);
-                    System.out.println("Thread " + thread + " Waiting");
-                    wait();
-                }
                 System.out.println("Thread " + thread + " Balance is good at " + acct.getBalance());
                 acct.setBalance(acct.getBalance() - withdraw);
                 notifyAll();
             }
+            System.out.println("Thread " + thread + " Balance is " + acct.getBalance());
+            System.out.println("Thread " + thread + " Trying to withdraw " + withdraw);
+            System.out.println("Thread " + thread + " Waiting");
+            wait();
         }
         finally
         {

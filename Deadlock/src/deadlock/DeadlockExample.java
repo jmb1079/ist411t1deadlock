@@ -26,7 +26,7 @@ public class DeadlockExample
         multiThreadedApp(); //Example 1
         //multiThredTransfer(); //Example 2
     }
-    
+
     public static void multiThreadedApp()
     {
         Account acct1 = new Account();
@@ -46,7 +46,7 @@ public class DeadlockExample
         Thread adjustThread4 = new Thread(adjustAccount4);
         adjustThread4.start();
     }
-    
+
     public static void multiThredTransfer()
     {
         AccountEx acct1 = new AccountEx(1);
